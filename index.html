@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Regex - JavaScript></title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+<body>
+<h1><center>Regex - Javascript</center></h1>
+<h3>Insira o texto, depois o padrão regex e por fim clique em pesquisar para obter o restultado</h3>
+Texto:
+<textarea class="w3-panel w3-leftbar w3-border-blue w3-border w3-hover-border-green" id="textInitial" style="width:100%;height:100px;"></textarea>
+Regex:
+<textarea class="w3-panel w3-leftbar w3-border-red w3-border w3-hover-border-yellow"  id="regex" style="width:100%;height:100px;"></textarea>
+<p><center><label for="modificador">Modificador:</label> <input type="text" id="modificador"></center></p>
+<p><button  style="float:right" class="w3-button w3-indigo" onclick="testRegex()">Buscar</button></p>
+
+<p>Resultado: <span id="resultado"></span></p>
+
+<script>
+function testRegex(){
+	var texto = String(document.getElementById("textInitial").value);
+	var regex = String(document.getElementById("regex").value);
+	var modificador = String(document.getElementById("modificador").value);
+	var test = new RegExp(regex,modificador);
+	var resultado = texto.match(test);
+	document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+</body>
+</html>
+
